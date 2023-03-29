@@ -24,6 +24,7 @@ admin.site.register(Complaint, ComplaintAdmin)
 
 class OwnerAdmin(admin.ModelAdmin):
     raw_id_fields = ('own_property',)
+    list_display = ('owner_name',)
 
 
 admin.site.register(Owner, OwnerAdmin)
