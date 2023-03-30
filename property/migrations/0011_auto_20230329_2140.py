@@ -8,7 +8,7 @@ def fill_own_property(apps, shcema_epitor):
     for owner in Owner.objects.all():
         flats = Flat.objects.filter(owner_name=owner.owner_name)
         owner.own_property.set(flats)
-        owner.save()
+
 
 
 
