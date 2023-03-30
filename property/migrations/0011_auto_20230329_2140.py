@@ -5,7 +5,7 @@ from django.db import migrations
 def fill_own_property(apps, shcema_epitor):
     Flat = apps.get_model('property', 'Flat')
     Owner = apps.get_model('property', 'Owner')
-    for owner in Owner.objects.all():
+    for owner in Owner.objects.all().iterator():
         flats = Flat.objects.filter(owner_name=owner.owner_name)
         owner.own_property.set(flats)
 

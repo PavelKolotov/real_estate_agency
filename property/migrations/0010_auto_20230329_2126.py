@@ -6,7 +6,7 @@ from django.db import migrations
 def get_flat_to_owner(apps, shcema_epitor):
     Flat = apps.get_model('property', 'Flat')
     Owner = apps.get_model('property', 'Owner')
-    for flat in Flat.objects.all():
+    for flat in Flat.objects.all().iterator():
         Owner.objects.get_or_create(
             owner_name=flat.owner_name,
             phonenumber=flat.owners_phonenumber,
